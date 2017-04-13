@@ -1,5 +1,5 @@
 module.exports = {
-	entry: './static/js/app.js',
+	entry: './static/js/bundler.js',
 	output: {
 		filename: './static/js/bundle.js'
 	},
@@ -7,16 +7,15 @@ module.exports = {
 	watch: true,
 
 	module: {
+		
 		loaders: [
 
-			// html 
-			{
+			{ // html 
 				test: /\.html$/,
 				loader: "raw-loader"
 			},
 
-			// babel
-			{
+			{ // babel
 				test: /\.js$/,
 				exclude: /node_modules/, 
 				loader: 'babel-loader',
@@ -25,15 +24,13 @@ module.exports = {
 				}
 			},
 
-			// css/style loader
-			{
+			{ // css/style loader
 				test: /\.css$/,
 				exclude: /node_modules/,
 				loader: 'style-loader!css-loader'
 			},
 
-			// sass
-			{
+			{ // sass
 			  test: /\.scss$/,
 			  use: ['style-loader', 'css-loader', 'sass-loader'],
 			}
